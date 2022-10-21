@@ -25,6 +25,6 @@ Route::get('me', [AuthController::class, 'me']);
 Route::get('/books', [BookController::class, 'index']);
 Route::get('/book/{id}', [BookController::class, 'show']);
 Route::post('/books', [BookController::class, 'store']);
-Route::get('/books/{id}', [BookController::class, 'update']);
-Route::get('/books/{id}', [BookController::class, 'destroy']);
+Route::put('/books/{id}', [BookController::class, 'update']);
+Route::delete('/books/{id}', [BookController::class, 'destroy']);
 
