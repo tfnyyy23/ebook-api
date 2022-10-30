@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\AuthorController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +29,9 @@ Route::get('/books/{id}', [BookController::class, 'show']);
 Route::post('/books', [BookController::class, 'store']);
 Route::put('/books/{id}', [BookController::class, 'update']);
 Route::delete('/books/{id}', [BookController::class, 'destroy']);
+
+
+Route::resource('authors', AuthorController::class)->except(
+    ['create','edit']
+);
 
